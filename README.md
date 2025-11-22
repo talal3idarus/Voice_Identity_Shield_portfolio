@@ -232,11 +232,6 @@ This project can be deployed to any static hosting service:
 
 **Specializations:** Cybersecurity | AI | Web Development | Voice Biometrics
 
----
-
-## 📄 License
-
-This project is private and proprietary. All rights reserved.
 
 ---
 
@@ -246,12 +241,4 @@ This project is private and proprietary. All rights reserved.
 - Inspired by industry solutions from ID R&D and Phonexia
 - Built with modern web technologies and best practices
 
----
 
-<div align="center">
-
-**Built with ❤️ for portfolio demonstration**
-
-[View Live Demo](#) • [Contact](#) • [Documentation](#)
-
-</div>
