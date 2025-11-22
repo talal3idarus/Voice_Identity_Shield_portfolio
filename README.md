@@ -199,18 +199,57 @@ The portfolio landing page includes:
 
 ## 🌐 Deployment
 
-This project can be deployed to any static hosting service:
+### Deploy to Netlify
 
-- **Vercel** - Recommended for React apps
-- **Netlify** - Easy deployment with continuous integration
-- **GitHub Pages** - Free hosting for static sites
-- **AWS S3 + CloudFront** - Enterprise-grade hosting
+This project is configured for easy deployment to Netlify. **No environment variables are required** as this is a static portfolio site.
 
-### Deployment Steps
+#### Option 1: Deploy via Netlify Dashboard
 
-1. Build the project: `npm run build`
-2. Upload the `dist/` folder to your hosting service
-3. Configure routing for single-page application (SPA)
+1. **Build the project locally** (optional, for testing):
+   ```bash
+   npm run build
+   ```
+
+2. **Go to [Netlify](https://app.netlify.com/)**
+   - Sign up/Login to your account
+
+3. **Drag and Drop Deployment**:
+   - Drag the `dist/` folder directly to Netlify dashboard
+   - Your site will be live instantly!
+
+#### Option 2: Deploy via Git (Recommended)
+
+1. **Push your code to GitHub/GitLab/Bitbucket**
+
+2. **Connect to Netlify**:
+   - Go to Netlify Dashboard → "Add new site" → "Import an existing project"
+   - Connect your Git provider
+   - Select your repository
+
+3. **Build Settings** (auto-detected from `netlify.toml`):
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - No environment variables needed
+
+4. **Deploy**:
+   - Click "Deploy site"
+   - Netlify will automatically build and deploy your site
+   - Future pushes to your main branch will auto-deploy
+
+#### Netlify Configuration
+
+The project includes a `netlify.toml` file that:
+- ✅ Sets the build command and publish directory
+- ✅ Configures SPA routing (all routes redirect to index.html)
+- ✅ Sets Node.js version to 18
+
+**That's it!** Your portfolio will be live on a Netlify subdomain (e.g., `your-project.netlify.app`)
+
+### Other Deployment Options
+
+- **Vercel** - `vercel` CLI or connect via Git
+- **GitHub Pages** - Use GitHub Actions for automated deployment
+- **AWS S3 + CloudFront** - For enterprise hosting
 
 ---
 
