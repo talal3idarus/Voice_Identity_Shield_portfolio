@@ -388,48 +388,50 @@ const Home = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="text-center max-w-5xl mx-auto"
           >
-            {/* Main heading with more personality */}
-            <motion.h1
+            {/* Main heading - simplified */}
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-heading font-semibold mb-8 leading-tight"
+              className="mb-6"
             >
-              <span className="block mb-2 text-primary">
-                Voice Identity Shield
+              <span className="inline-block px-3 py-1 mb-4 text-sm font-medium text-primary bg-primary/10 border border-primary/20 rounded-full">
+                Portfolio Project
               </span>
-              <span className="block text-text-primary">
-                Voice Biometric Defense
-              </span>
-              <span className="block mt-2 text-3xl md:text-4xl lg:text-5xl text-text-secondary font-normal">
-                57-D embeddings, AES-256-GCM storage, and full audit trails to stop AI impostors.
-              </span>
-            </motion.h1>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-semibold mb-4 leading-tight">
+                <span className="block text-primary">Voice Identity Shield</span>
+                <span className="block text-text-primary text-3xl md:text-5xl lg:text-6xl font-normal mt-2">
+                  Voice Biometric Authentication System
+                </span>
+              </h1>
+            </motion.div>
 
-            {/* Subtitle with better spacing */}
+            {/* Combined description */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-base md:text-lg text-text-secondary mb-8 max-w-3xl mx-auto leading-relaxed"
             >
-              Our backend-first stack already delivers enrollment, FFmpeg preprocessing, encrypted voiceprint vaulting,
-              score fusion, risk analytics, and audit logging — with ECAPA embeddings and anti-spoof models ready to drop in.
+              A full-stack voice verification platform with <span className="text-text-primary font-medium">57-D embeddings</span>, 
+              <span className="text-text-primary font-medium"> AES-256-GCM encryption</span>, and <span className="text-text-primary font-medium">deepfake detection</span>. 
+              Built with React, FastAPI, and machine learning. Features real-time enrollment, encrypted storage, 
+              verification with anti-spoof detection, and analytics dashboard.
             </motion.p>
 
-            {/* CTA Buttons with better styling */}
+            {/* CTA Button and Tech Stack combined */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+              className="flex flex-col items-center gap-6"
             >
               <button
-                onClick={() => handleProtectedAction('/enroll')}
-                className="group relative px-10 py-5 gradient-primary rounded-2xl font-semibold text-dark glow-hover transition-all shadow-soft-lg overflow-hidden cursor-default"
+                onClick={() => setShowPresentation(true)}
+                className="group relative px-8 py-4 gradient-primary rounded-xl font-semibold text-dark glow-hover transition-all shadow-soft-lg overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Get Started
+                  View Project Details
                   <motion.svg
                     className="w-5 h-5"
                     fill="none"
@@ -449,55 +451,12 @@ const Home = () => {
                   transition={{ duration: 0.6 }}
                 />
               </button>
-              <button
-                onClick={() => handleProtectedAction('/verify')}
-                className="group px-10 py-5 bg-card/60 backdrop-blur-md border-2 border-primary/40 rounded-2xl font-semibold text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-soft cursor-default"
-              >
-                <span className="flex items-center gap-2">
-                  Verify Voice
-                  <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </span>
-              </button>
-              <button
-                onClick={() => setShowPresentation(true)}
-                className="group px-10 py-5 bg-card/60 backdrop-blur-md border-2 border-accent/40 rounded-2xl font-semibold text-accent hover:bg-accent/10 hover:border-accent transition-all duration-300 shadow-soft"
-              >
-                <span className="flex items-center gap-2">
-                  Presentation Mode
-                  <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h8M8 11h8M8 15h8M4 19h16" />
-                  </svg>
-                </span>
-              </button>
-            </motion.div>
 
-            {/* Trust indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="mt-16 flex flex-wrap justify-center items-center gap-8 text-text-secondary text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Backend-only Firebase architecture</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
-                  <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
-                </svg>
-                <span>57-feature biometric voiceprint</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>AES-256-GCM voiceprint vault</span>
+              {/* Compact Tech Stack */}
+              <div className="flex flex-wrap justify-center items-center gap-4 text-text-secondary text-xs md:text-sm">
+                <span className="px-3 py-1.5 bg-card/40 border border-border/30 rounded-lg">React • FastAPI • Python</span>
+                <span className="px-3 py-1.5 bg-card/40 border border-border/30 rounded-lg">57-D Biometric Features</span>
+                <span className="px-3 py-1.5 bg-card/40 border border-border/30 rounded-lg">AES-256-GCM Encryption</span>
               </div>
             </motion.div>
           </motion.div>
@@ -531,24 +490,24 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-error/10 border border-error/20 rounded-full text-error text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-6"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
               </svg>
-              Security Alert
+              About the Project
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary mb-6 leading-tight">
-              Why we built a
+              Building a
               <br />
-              <span className="text-primary">voice-first security stack</span>
+              <span className="text-primary">Voice Biometric Authentication System</span>
             </h2>
             <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-3xl mx-auto leading-relaxed">
-              Fraud teams now weaponise cloned voices in less than five minutes. A stolen voicemail or Zoom clip is
-              enough to bypass legacy “voice match” checks. Voice Identity Shield counters this with encrypted
-              voiceprints, 57-dimensional biometric analytics, and an auditable verification pipeline that already ships
-              in our backend.
+              This project addresses the growing threat of AI-generated voice deepfakes in authentication systems. 
+              Voice Identity Shield implements a comprehensive solution using encrypted voiceprints, 57-dimensional 
+              biometric feature extraction, and anti-spoof detection to verify speaker identity and detect synthetic audio attacks.
             </p>
             
             {/* Stats Cards with better design */}
@@ -594,39 +553,41 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Research Highlights */}
+            {/* Key Features Implemented */}
             <div className="mt-12 text-left card-soft rounded-3xl p-8 border border-primary/30 shadow-soft-lg max-w-4xl mx-auto">
               <h3 className="text-2xl font-heading font-semibold text-text-primary mb-4">
-                Research Highlights
+                Key Features Implemented
               </h3>
               <ul className="list-disc list-inside space-y-2 text-text-secondary">
                 <li>
-                  Built a dual‑pipeline for <span className="text-text-primary">speaker verification</span> and <span className="text-text-primary">deepfake detection</span> (phase/residual + vocoder artefacts).
+                  Built a dual‑pipeline for <span className="text-text-primary">speaker verification</span> and <span className="text-text-primary">deepfake detection</span> using phase/residual analysis and vocoder artifact detection.
                 </li>
                 <li>
-                  Implemented <span className="text-text-primary">57‑feature bundle</span> with per‑feature Δ explanations and leading shift analytics for reviewer trust.
+                  Implemented <span className="text-text-primary">57‑dimensional feature extraction</span> with per‑feature delta explanations and leading shift analytics for transparency.
                 </li>
                 <li>
-                  Designed a <span className="text-text-primary">privacy‑first storage model</span> (AES‑256‑GCM with envelope encryption, in‑memory decrypt) and retention controls.
+                  Designed a <span className="text-text-primary">privacy‑first storage model</span> using AES‑256‑GCM encryption with envelope encryption, in‑memory decryption, and configurable retention policies.
                 </li>
                 <li>
-                  Evaluated pipeline robustness on varied mic/room conditions and synthetic samples to tune thresholds.
+                  Developed a <span className="text-text-primary">real-time verification system</span> with cosine similarity scoring, anti-spoof heuristics, and feature drift penalties.
                 </li>
                 <li>
-                  Documented end‑to‑end runbooks, partner guide, and presentation mode to support deployments and audits.
+                  Created an <span className="text-text-primary">analytics dashboard</span> with verification history, score visualization, and explainable feature comparisons.
+                </li>
+                <li>
+                  Built a <span className="text-text-primary">presentation mode</span> for stakeholder demos and technical walkthroughs.
                 </li>
               </ul>
 
-              {/* Select references (concise) */}
+              {/* Technologies Used */}
               <div className="mt-6">
-                <h4 className="text-md font-semibold text-text-primary mb-2">Select references</h4>
+                <h4 className="text-md font-semibold text-text-primary mb-2">Technologies & Stack</h4>
                 <ul className="list-disc list-inside space-y-1 text-text-secondary text-sm">
-                  <li>ASVspoof 2021 challenge (Kinnunen et&nbsp;al., 2022) – RawNet2 spoof detection.</li>
-                  <li>Multi‑modal deepfake detection (Tak et&nbsp;al., 2023, arXiv) – audio‑visual cues.</li>
-                  <li>Speaker Verification in the Wild (Stafylakis et&nbsp;al., 2021) – robust SV review.</li>
-                  <li>Adversarial attacks on SV (Xin Wang et&nbsp;al., 2023, Interspeech) – threat model.</li>
-                  <li>AI Now: Deepfakes & society (2022) and Carlini et&nbsp;al., 2023 (USENIX) – privacy risks.</li>
-                  <li>Streaming VAD (Google, 2023, arXiv); Cross‑language voice conversion (Farrús et&nbsp;al., 2022).</li>
+                  <li><span className="text-text-primary">Frontend:</span> React, Framer Motion, Tailwind CSS, Recharts</li>
+                  <li><span className="text-text-primary">Backend:</span> FastAPI, Python, FFmpeg, NumPy, SciPy</li>
+                  <li><span className="text-text-primary">ML/AI:</span> ECAPA-TDNN embeddings, MFCC extraction, Anti-spoof models</li>
+                  <li><span className="text-text-primary">Security:</span> AES-256-GCM encryption, HTTPS/TLS, JWT authentication</li>
+                  <li><span className="text-text-primary">Storage:</span> Firebase (backend), Encrypted voiceprint vault</li>
                 </ul>
               </div>
             </div>
@@ -669,11 +630,11 @@ const Home = () => {
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary mb-6 leading-tight">
-              How It <span className="text-primary">Works</span>
+              System <span className="text-primary">Architecture</span>
             </h2>
             <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Our platform uses advanced biometric analysis and encryption to protect your voice identity 
-              in just a few simple steps
+              The project implements a complete voice authentication pipeline with biometric analysis, 
+              encryption, and verification in four main stages
             </p>
           </motion.div>
 
@@ -762,10 +723,11 @@ const Home = () => {
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary mb-6 leading-tight">
-              Key <span className="text-primary">Features</span>
+              Core <span className="text-primary">Capabilities</span>
             </h2>
             <p className="text-text-secondary text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Everything you need to protect your voice identity with enterprise-grade security
+              The system implements enterprise-grade security features including biometric authentication, 
+              encryption, and real-time verification capabilities
             </p>
           </motion.div>
 
@@ -843,13 +805,13 @@ const Home = () => {
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary leading-tight mb-6">
-              Every enrollment extracts{' '}
-              <span className="text-primary">seven pillars</span> of voice intelligence
+              Implementing{' '}
+              <span className="text-primary">57-Dimensional Feature Extraction</span>
             </h2>
             <p className="text-text-secondary text-lg md:text-xl leading-relaxed">
-              From spectral fingerprints to prosodic cadence, the platform analyses the same 57 features
-              documented in our technical runbook. These values are stored encrypted, compared during every
-              verification, and surfaced in the dashboard for transparency.
+              The system extracts 57 biometric features across seven categories, from spectral fingerprints to prosodic cadence. 
+              These features are encrypted, stored securely, and compared during verification to provide transparent, 
+              explainable authentication results.
             </p>
           </motion.div>
 
@@ -926,12 +888,12 @@ const Home = () => {
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary leading-tight mb-6">
-              What happens when you{' '}
-              <span className="text-primary">Verify Your Voice</span>
+              Verification{' '}
+              <span className="text-primary">Pipeline Implementation</span>
             </h2>
             <p className="text-text-secondary text-lg md:text-xl leading-relaxed">
-              Every login attempt goes through layered biometric checks. If a deepfake slips past a single
-              score, feature drift penalties and anti-spoof heuristics still catch it before access is granted.
+              The system implements layered biometric verification with multiple security checks. Feature drift penalties 
+              and anti-spoof heuristics work together to detect deepfakes even when individual scores appear legitimate.
             </p>
           </motion.div>
 
@@ -1155,19 +1117,19 @@ const Home = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-medium mb-6"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
-                Get Started Today
+                Explore the Project
               </motion.div>
 
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold text-text-primary mb-6 leading-tight">
-                Ready to Protect Your
+                Interested in This
                 <br />
-                <span className="text-primary">Voice Identity?</span>
+                <span className="text-primary">Project?</span>
               </h2>
               <p className="text-text-secondary text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-                Start by enrolling your voice and creating your unique encrypted voiceprint. 
-                It only takes a few seconds to get started.
+                Explore the full implementation details, view the source code, or check out the presentation 
+                mode for a comprehensive walkthrough of the system architecture and features.
               </p>
               
               <motion.div
@@ -1175,10 +1137,10 @@ const Home = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <button
-                  onClick={() => handleProtectedAction('/enroll')}
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 gradient-primary rounded-2xl font-semibold text-dark glow-hover transition-all shadow-soft-lg overflow-hidden cursor-default"
+                  onClick={() => setShowPresentation(true)}
+                  className="group relative inline-flex items-center gap-3 px-10 py-5 gradient-primary rounded-2xl font-semibold text-dark glow-hover transition-all shadow-soft-lg overflow-hidden"
                 >
-                  <span className="relative z-10">Enroll Your Voice Now</span>
+                  <span className="relative z-10">View Presentation</span>
                   <motion.svg
                     className="w-5 h-5 relative z-10"
                     fill="none"
@@ -1188,7 +1150,7 @@ const Home = () => {
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h8M8 11h8M8 15h8M4 19h16" />
                   </motion.svg>
                   <motion.div
                     className="absolute inset-0 bg-white/20"
@@ -1199,7 +1161,7 @@ const Home = () => {
                 </button>
               </motion.div>
 
-              {/* Trust message */}
+              {/* Portfolio message */}
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -1210,7 +1172,7 @@ const Home = () => {
                 <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                Free to use • No credit card required • 100% secure
+                Portfolio Project • Open Source • Full-Stack Implementation
               </motion.p>
             </div>
           </motion.div>
